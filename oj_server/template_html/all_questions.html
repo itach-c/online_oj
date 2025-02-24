@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线评测系统 - 欢迎</title>
+  <link rel="stylesheet" href="styles.css"> <!-- 可自定义样式 -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    table {
+      width: 80%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    .container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>在线评测系统 - 欢迎</h1>
+    <table>
+      <tr>
+        <th>编号</th>
+        <th>标题</th>
+        <th>难度</th>
+        <th>时间限制</th>
+        <th>空间限制</th>
+      </tr>
+      {{#question_list}}
+      <tr>
+        <td>{{number}}</td>
+        <td><a href="/question/{{number}}">{{title}}</a></td>
+        <td>{{star}}</td>
+        <td>{{cpu_limit}}</td>
+        <td>{{mem_limit}}</td>
+      </tr>
+      {{/question_list}}
+    </table>
+  </div>
+
+</body>
+
+</html>
